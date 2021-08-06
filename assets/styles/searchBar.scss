@@ -2,6 +2,7 @@
     background-color: $yellow;
 
     &__image {
+        cursor: pointer;
         background-image: url('../images/logo__small.png');
         background-repeat: no-repeat;
         background-size: 44px 31px;
@@ -46,6 +47,8 @@
         &__button {
             background-color: transparent;
             border: none;
+            position: absolute;
+            right: 0;
 
             &::before {
                 content: '';

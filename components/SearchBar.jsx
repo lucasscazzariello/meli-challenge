@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar, Input, Button, Container} from "reactstrap";
+import { Navbar, Input, Button, Container } from "reactstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const SearchBar = () => {
