@@ -1,12 +1,10 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
 
 const Home = () => {
 
   return (
-    <header>
-      <SearchBar />
-    </header>
+    <>
+    </>
   )
 }
 

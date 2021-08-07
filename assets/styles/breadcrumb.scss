@@ -1,0 +1,12 @@
+$breadcrumb-divider: quote(">");
+.breadcrumb-item + .breadcrumb-item::before {
+  content: $breadcrumb-divider;
+}
+
+.breadcrumb{
+    background-color: transparent;
+    padding: $padding-sm 0;
+    margin: 0;
+    font-size: 0.875rem;
+    color: $grey;
+}

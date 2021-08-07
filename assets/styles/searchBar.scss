@@ -42,6 +42,7 @@
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
             padding-right: 60px;
+            font-size: $medium-size;
         }
 
         &__button {
@@ -58,6 +59,10 @@
                 position: absolute;
                 top: 7.5px;
                 left: 0;
+            }
+
+            &:focus{
+                box-shadow: none;
             }
         }
     }
