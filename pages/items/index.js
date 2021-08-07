@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Container } from "reactstrap";
 import { useRouter } from 'next/dist/client/router'
 import Breadcrumb from '../../components/Breadcrumb';
+import ListItems from '../../components/ListItems/ListItems'
 
 const Items = () => {
     const router = useRouter()
@@ -15,7 +16,7 @@ const Items = () => {
         <Container>
             <div className="items-content">
                 <Breadcrumb />
-                Aca muestro los items
+                <ListItems />
             </div>
         </Container>
     )

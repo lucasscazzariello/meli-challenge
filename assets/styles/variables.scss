@@ -9,23 +9,38 @@ $white:#ffffff;
 $blue: #3483FA;
 
 /**
-* Fonts
+* Fonts size
 **/
 $info-small-size: 12px;
 $info-size: 14px;
-$normal-size: 16px;
+$size: 16px;
 $medium-size: 18px;
 $large-size: 24px;
 $xlarge-size: 28px;
 $jumbo-size: 46px;
 
+/**
+* Fonts weight
+**/
+$light-weight: 300;
+$normal-weight: 400;
+$medium-weight: 500;
+$bold-weight: 600;
+
 
 /**
 * Padding
 **/
-$padding-sm: 16px;
-$padding-md: 20px;
-$padding-lg: 32px;
+$padding-1: 10px;
+$padding-2: 16px;
+$padding-3: 20px;
+$padding-4: 32px;
+
+
+/**
+* Borders
+**/
+$rounded: 4px;
 
 /**
 * Breakpoints
