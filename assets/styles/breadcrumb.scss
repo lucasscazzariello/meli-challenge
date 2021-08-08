@@ -10,3 +10,7 @@ $breadcrumb-divider: quote(">");
     font-size: 0.875rem;
     color: $grey;
 }
+
+.breadcrumb-item+.breadcrumb-item::before {
+  color: $grey;
+}
