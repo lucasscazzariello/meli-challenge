@@ -6,7 +6,7 @@ const ItemDetail = () => {
 
     return (
         <Container>
-            <div>
+            <div className="detail">
                 <Breadcrumb/>
                 <div className="detail-content">
                     <Row className="detail-product">
