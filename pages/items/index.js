@@ -33,7 +33,7 @@ const Items = () => {
                 {error ?
                     <Alert color="danger" className="items-content-error">
                         {error}
-                    </Alert> : !results || results.length < 1 ?
+                    </Alert> : results && results.length < 1 ?
                         <Alert className="items-content-error">
                             No se encontraron resultados de la búsqueda
                         </Alert> :
