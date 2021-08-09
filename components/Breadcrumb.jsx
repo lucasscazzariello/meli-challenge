@@ -1,22 +1,13 @@
 import React from 'react'
 
-const Breadcrumb = () => {
-
+const Breadcrumb = ({categories}) => {
     return (
         <div>
             <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                    item 1
-                </li>
-                <li className="breadcrumb-item">
-                    item 2
-                </li>
-                <li className="breadcrumb-item">
-                    item 3
-                </li>
-                <li className="breadcrumb-item">
-                    item 4
-                </li>
+                {categories && categories.map( ({name, id}) => {
+                    return <li className="breadcrumb-item" key={id}>{name}</li>
+                })
+                }
             </ol>
         </div>
     )

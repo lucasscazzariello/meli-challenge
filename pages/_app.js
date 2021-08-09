@@ -15,7 +15,7 @@ function App({ Component, pageProps }) {
   library.add(faSearch)
 
   useEffect(() => {
-    router.query && setTextTitle(router.query.search)   
+    router.query && setTextTitle(router.query.search)
   }, [router.query.search])
 
   // Creo Layout para mantener la SearchBar independiente a los components
@@ -28,7 +28,9 @@ function App({ Component, pageProps }) {
       <header>
         <SearchBar />
       </header>
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
     </Layout>
   )
 }

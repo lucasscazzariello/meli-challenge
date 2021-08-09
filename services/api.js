@@ -1,3 +1,4 @@
+// Llamá a la petición que indicamos
 import axios from 'axios';
 
 let serverUrl = process.env.APP_SERVER || 'http://localhost:8080';

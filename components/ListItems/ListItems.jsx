@@ -1,15 +1,15 @@
 import React from 'react'
 import CardItem from './CardItem'
 
-const ListItems = () => {
-
+const ListItems = ({items}) => {
     return (
-        <>
-            <CardItem />
-            <CardItem />
-            <CardItem />
-            <CardItem />
-        </>
+        <div>
+            {items &&
+                items.map((item) => (
+                    <CardItem key={item.id} {...item} />
+                ))
+            }
+        </div>
     )
 
 }
