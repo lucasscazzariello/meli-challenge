@@ -1,20 +1,44 @@
-import React from 'react'
-import {Container, Button, Row, Col} from "reactstrap";
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/dist/client/router'
+import dispatch from '../../client/items'
+import { Container, Button, Row, Col } from "reactstrap";
 import Breadcrumb from '../../components/Breadcrumb';
 
 const ItemDetail = () => {
+    // const [item, setItem] = useState()
+    // const [category, setCategory] = useState("")
+    // const [errors, setErrors] = useState()
+    const router = useRouter()
+    const { id } = router.query
+
+    useEffect(() => {
+        id && getItemById()
+    }, [id])
+
+    const getItemById = async () => {
+        try {
+            const response = await dispatch.getItemById(id)
+            console.log(response)
+            // const { items, categories } = response.data
+            // setResults(items)
+            // setCategories(categories)
+        } catch (err) {
+            console.log(err)
+            // setError(err.response.data)
+        }
+    }
 
     return (
         <Container>
             <div className="detail">
-                <Breadcrumb/>
+                <Breadcrumb />
                 <div className="detail-content">
                     <Row className="detail-product">
                         <Col sm={8}>
                             <div className="detail-product__image">
                                 <img
                                     src="https://http2.mlstatic.com/D_NQ_NP_966059-MLA44454383918_122020-O.webp"
-                                    alt="foto"/>
+                                    alt="foto" />
                             </div>
                         </Col>
                         <Col sm={4}>

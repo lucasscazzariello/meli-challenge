@@ -6,5 +6,9 @@ export default {
         const response = await api.items().getItems(search)
         return response.data
     },
+    async getItemById(id) {
+        const response = await api.items().getItemById(id)
+        return response.data
+    }
 }
 
