@@ -1,0 +1,70 @@
+.nav-bar {
+    background-color: $yellow;
+
+    &__image {
+        cursor: pointer;
+        background-image: url('../images/logo__small.png');
+        background-repeat: no-repeat;
+        background-size: 44px 31px;
+        width: 44px;
+        height: 32px;
+        top: 8px;
+        @include large {
+            background-image: url('../images/logo__large.png');
+            background-size: 134px 34px;
+            height: 34px;
+            top: 11px;
+            width: 134px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 44px);
+        padding: 0.5rem 0 0.5rem 1rem;
+        @include large {
+            width: calc(100% - 134px);
+        }
+
+        &__input {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+            height: 40px;
+            border: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-right: 60px;
+            font-size: $medium-size;
+        }
+
+        &__button {
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            right: 0;
+
+            &::before {
+                content: '';
+                display: block;
+                height: 25px;
+                border-left: 1px solid #e6e6e6;
+                position: absolute;
+                top: 7.5px;
+                left: 0;
+            }
+
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+
+}

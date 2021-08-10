@@ -1,0 +1,100 @@
+.card-result {
+    border-bottom: thin solid #eee;
+
+    &__content {
+        cursor: pointer;
+        background-color: $white;
+        padding: $padding-2;
+        display: flex;
+        align-items: center;
+
+        @include medium {
+            align-items: flex-start;
+        }
+
+    }
+
+    // Corregir los border radius, agregarle una className si es el primero u el último
+    &:first-child {
+        border-radius: $rounded $rounded 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 $rounded $rounded;
+        border: none;
+    }
+
+    &__image {
+        display: inline-flex;
+        padding-right: $padding-2;
+
+        &--content {
+            width: 110px;
+            height: 110px;
+            border-radius: $rounded;
+            overflow: hidden;
+
+            @include medium {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        &--element {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        width: 100%;
+        
+        @include medium {
+            padding: $padding-2 $padding-4 $padding-2 0;
+        }
+
+        &--price {
+            .card-result-price {
+                display: inline-block;
+                margin: 0;
+                padding-bottom: $padding-1;
+                font-size: $large-size;
+                
+                @include medium {
+                    font-size: $xlarge-size;
+                    padding-bottom: $padding-3;
+                }
+            }
+        }
+
+        &--info {
+            .card-result-info {
+                display: inline-block;
+                margin: 0;
+                font-size: $size;
+                font-weight: $normal-weight;
+
+                @include medium {
+                    font-size: $medium-size;
+                }
+            }
+        }
+
+        &--address {
+            min-width: 20%;
+            font-size: $info-small-size;
+            margin-left: $padding-1;
+            
+            @include medium {
+                font-size: $size;
+                margin-left: $padding-4;
+            }
+        }
+    }
+
+}
