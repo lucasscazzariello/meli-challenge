@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, Alert } from "reactstrap";
 import { useRouter } from 'next/dist/client/router'
 import Breadcrumb from '../../components/Breadcrumb';
 import ListItems from '../../components/ListItems/ListItems'
-import dispatch from '../../client/items'
+import { searchWithText } from '../../redux/items/items'
+// import dispatch from '../../client/items'
 
 const Items = () => {
-    const [results, setResults] = useState();
-    const [categories, setCategories] = useState();
-    const [error, setError] = useState();
+    const dispatch = useDispatch()
+    const items = useSelector(store => store.items.items)
+    const categories = useSelector(store => store.items.categories)
+    const error = false
+
     const router = useRouter()
     const { search } = router.query
 
     useEffect(() => {
-        search && getItemsSearch()
+        search && dispatch(searchWithText(search))
     }, [search])
 
-    const getItemsSearch = async () => {
-        try {
-            const response = await dispatch.searchWithText(search)
-            const { items, categories } = response.data
-            setResults(items)
-            setCategories(categories)
-        } catch (err) {
-            setError(err.response.data)
-        }
-    }
+    console.log(items)
 
     return (
         <Container>
@@ -33,13 +28,13 @@ const Items = () => {
                 {error ?
                     <Alert color="danger" className="items-content-error">
                         {error}
-                    </Alert> : results && results.length < 1 ?
+                    </Alert> : items && items.length < 1 ?
                         <Alert className="items-content-error">
                             No se encontraron resultados de la búsqueda
                         </Alert> :
                         <>
                             <Breadcrumb categories={categories} />
-                            <ListItems items={results} />
+                            <ListItems items={items} />
                         </>
                 }
             </div>
