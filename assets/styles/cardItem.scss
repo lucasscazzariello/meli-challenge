@@ -53,7 +53,7 @@
         justify-content: space-between;
         flex-wrap: nowrap;
         width: 100%;
-        
+
         @include medium {
             padding: $padding-2 $padding-4 $padding-2 0;
         }
@@ -64,7 +64,7 @@
                 margin: 0;
                 padding-bottom: $padding-1;
                 font-size: $large-size;
-                
+
                 @include medium {
                     font-size: $xlarge-size;
                     padding-bottom: $padding-3;
@@ -89,7 +89,7 @@
             min-width: 20%;
             font-size: $info-small-size;
             margin-left: $padding-1;
-            
+
             @include medium {
                 font-size: $size;
                 margin-left: $padding-4;

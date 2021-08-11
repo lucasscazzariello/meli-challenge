@@ -1,7 +1,7 @@
 // Llamá a la petición que indicamos
 import axios from 'axios';
 
-let serverUrl = process.env.APP_SERVER || 'http://localhost:8080';
+const serverUrl = process.env.APP_SERVER || 'http://localhost:8080';
 
 const api = {
     items() {
