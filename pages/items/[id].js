@@ -17,8 +17,8 @@ const ItemDetail = () => {
 
     const getItemById = async () => {
         try {
-            const response = await dispatch.getItemById(id)
-            const { item } = response.data
+            const { data } = await dispatch.getItemById(id)
+            const { item } = data
             setItem(item)
         } catch (err) {
             setError(err.response.data)

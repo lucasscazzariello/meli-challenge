@@ -18,8 +18,8 @@ const Items = () => {
 
     const getItemsSearch = async () => {
         try {
-            const response = await dispatch.searchWithText(search)
-            const { items, categories } = response.data
+            const { data } = await dispatch.searchWithText(search)
+            const { items, categories } = data
             setResults(items)
             setCategories(categories)
         } catch (err) {
