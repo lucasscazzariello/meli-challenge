@@ -9,6 +9,7 @@
         width: 44px;
         height: 32px;
         top: 8px;
+
         @include large {
             background-image: url('../images/logo__large.png');
             background-size: 134px 34px;
@@ -31,6 +32,7 @@
         justify-content: space-between;
         width: calc(100% - 44px);
         padding: 0.5rem 0 0.5rem 1rem;
+
         @include large {
             width: calc(100% - 134px);
         }
@@ -61,7 +63,7 @@
                 left: 0;
             }
 
-            &:focus{
+            &:focus {
                 box-shadow: none;
             }
         }

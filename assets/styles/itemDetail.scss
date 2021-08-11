@@ -22,20 +22,28 @@
 
 
         &__info {
-            span {
+            &--condition {
                 font-size: $info-size;
                 margin-bottom: $padding-2;
             }
+
             h4 {
                 font-size: $large-size;
                 margin: 0;
                 padding-bottom: $padding-3;
             }
+
             h2 {
+                margin: 0;
+            }
+
+            &--price {
                 font-size: $jumbo-size;
                 margin: 0;
+                display: block;
                 padding-bottom: $padding-3;
             }
+
             button.btn {
                 height: 48px;
                 width: 100%;
@@ -75,6 +83,7 @@
             padding-bottom: $padding-3;
             font-size: $xlarge-size;
         }
+
         &__info {
             margin: 0;
             font-size: $size;
