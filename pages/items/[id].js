@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/dist/client/router'
-import dispatch from '../../client/items'
+import { getItemDetail } from '../../client/items'
 import { Container, Alert } from "reactstrap";
 import Breadcrumb from '../../components/Breadcrumb';
 import Detail from '../../components/Detail/Detail';
@@ -17,7 +17,7 @@ const ItemDetail = () => {
 
     const getItemById = async () => {
         try {
-            const { data } = await dispatch.getItemById(id)
+            const { data } = await getItemDetail(id)
             const { item } = data
             setItem(item)
         } catch (err) {
