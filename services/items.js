@@ -6,7 +6,7 @@ const serverUrl = process.env.APP_SERVER || 'http://localhost:8080';
 const getItems = (text) => axios.get(`${serverUrl}/api/items?search=${text}`)
 const getItemById = (id) => axios.get(`${serverUrl}/api/items/${id}`)
 
-export default {
+module.exports = {
     getItems,
     getItemById
 }

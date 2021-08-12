@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/dist/client/router'
-import dispatch from '../../client/items'
+import { searchWithText } from '../../client/items'
 import { Container, Alert } from "reactstrap";
 import Breadcrumb from '../../components/Breadcrumb';
 import ListItems from '../../components/ListItems/ListItems'
@@ -18,7 +18,7 @@ const Items = () => {
 
     const getItemsSearch = async () => {
         try {
-            const { data } = await dispatch.searchWithText(search)
+            const { data } = await searchWithText(search)
             const { items, categories } = data
             setResults(items)
             setCategories(categories)
