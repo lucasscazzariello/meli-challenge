@@ -14,14 +14,16 @@
 
     }
 
-    // Corregir los border radius, agregarle una className si es el primero u el último
     &:first-child {
-        border-radius: $rounded $rounded 0 0;
+        .card-result__content {
+            border-radius: $rounded $rounded 0 0;
+        }
     }
 
     &:last-child {
-        border-radius: 0 0 $rounded $rounded;
-        border: none;
+        .card-result__content {
+            border-radius: 0 0 $rounded $rounded;
+        }
     }
 
     &__image {
