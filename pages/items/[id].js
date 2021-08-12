@@ -7,6 +7,7 @@ import Detail from '../../components/Detail/Detail';
 
 const ItemDetail = () => {
     const [item, setItem] = useState()
+    const [categories, setCategories] = useState();
     const [error, setError] = useState()
     const router = useRouter()
     const { id } = router.query
@@ -18,8 +19,9 @@ const ItemDetail = () => {
     const getItemById = async () => {
         try {
             const { data } = await getItemDetail(id)
-            const { item } = data
+            const { item, categories } = data
             setItem(item)
+            setCategories(categories)
         } catch (err) {
             setError(err.response.data)
         }
@@ -34,7 +36,7 @@ const ItemDetail = () => {
                     </Alert> :
                     item &&
                     <>
-                        <Breadcrumb />
+                        <Breadcrumb categories={categories} />
                         <Detail {...item} />
                     </>
                 }
