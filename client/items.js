@@ -1,13 +1,13 @@
 // Tengo las funciones que desencadenarán una petición
-import api from '../services/api'
+import { getItems, getItemById } from '../services/items'
 
 export default {
     async searchWithText(search) {
-        const response = await api.items().getItems(search)
-        return response.data
+        const { data } = await getItems(search)
+        return data
     },
     async getItemById(id) {
-        const response = await api.items().getItemById(id)
-        return response.data
+        const { data } = await getItemById(id)
+        return data
     }
 }
